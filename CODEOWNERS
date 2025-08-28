@@ -1,0 +1,44 @@
+# Global owners
+* @ai-narrative-team
+
+# Frontend ownership
+/frontend/ @frontend-team
+/frontend/** @frontend-team
+
+# API ownership  
+/api/ @backend-team
+/api/** @backend-team
+
+# Workers ownership
+/workers/ @ml-team
+/workers/** @ml-team
+
+# Infrastructure ownership
+/infra/ @sre-team
+/infra/** @sre-team
+docker-compose*.yml @sre-team
+Dockerfile* @sre-team
+
+# Documentation ownership
+/docs/ @pm-team
+README.md @pm-team
+ARCH.md @pm-team
+PLAN.md @pm-team
+TODO.md @pm-team
+
+# Configuration files
+package.json @backend-team
+tsconfig*.json @backend-team
+.eslintrc* @frontend-team
+.prettierrc* @frontend-team
+requirements.txt @ml-team
+pyproject.toml @ml-team
+
+# CI/CD ownership
+.github/ @sre-team
+.gitlab-ci.yml @sre-team
+.circleci/ @sre-team
+
+# Security and compliance
+.env.example @sre-team
+security/ @sre-team

@@ -1,0 +1,61 @@
+{
+  "name": "ai-game-narrative-generator",
+  "version": "1.0.0",
+  "description": "Dynamic AI-driven worlds where CrewAI agents collaborate to create branching storylines, quests, and dialogue",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "api",
+    "shared"
+  ],
+  "scripts": {
+    "dev:all": "concurrently \"npm run dev:api\" \"npm run dev:frontend\" \"npm run dev:workers\"",
+    "dev:api": "cd api && npm run start:dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:workers": "cd workers && uvicorn main:app --reload --port 8001",
+    "build": "npm run build:api && npm run build:frontend",
+    "build:api": "cd api && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test:all": "npm run test:api && npm run test:frontend && npm run test:workers",
+    "test:api": "cd api && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:workers": "cd workers && pytest",
+    "lint": "npm run lint:api && npm run lint:frontend",
+    "lint:api": "cd api && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "typecheck": "npm run typecheck:api && npm run typecheck:frontend",
+    "typecheck:api": "cd api && npm run typecheck",
+    "typecheck:frontend": "cd frontend && npm run typecheck",
+    "clean": "npm run clean:api && npm run clean:frontend",
+    "clean:api": "cd api && npm run clean",
+    "clean:frontend": "cd frontend && npm run clean",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/ai-game-narrative-generator.git"
+  },
+  "keywords": [
+    "ai",
+    "narrative",
+    "game",
+    "storytelling",
+    "crewai",
+    "quests",
+    "dialogue"
+  ],
+  "author": "AI Game Narrative Generator Team",
+  "license": "MIT"
+}
